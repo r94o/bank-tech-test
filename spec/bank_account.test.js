@@ -26,7 +26,8 @@ describe(BankAccount, () => {
     })
     it("withdrawing money deducts from the bank balance", () => {
       this.bankAccount.deposit(50);
-      this.bankAccount.withdraw(50);
+      this.bankAccount.deposit(60);
+      this.bankAccount.withdraw(110);
       expect(() => {
         this.bankAccount.withdraw(1);
       }).toThrow("You tried to withdraw more money than your balance");
