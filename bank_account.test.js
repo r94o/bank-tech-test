@@ -23,6 +23,14 @@ describe("Bank Account", () => {
         bankAccount.withdraw(1)
       }).toThrow("You tried to withdraw more money than your balance");
     })
+    it("withdrawing money deducts from the bank balance", () => {
+      const bankAccount = new BankAccount();
+      bankAccount.deposit(50);
+      bankAccount.withdraw(50);
+      expect(() => {
+        bankAccount.withdraw(1);
+      }).toThrow("You tried to withdraw more money than your balance");
+    })
   })
 
 })

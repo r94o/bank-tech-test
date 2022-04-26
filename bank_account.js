@@ -9,6 +9,7 @@ class BankAccount {
 
   withdraw(amount) {
     if (this.balance - amount < 0) throw ("You tried to withdraw more money than your balance");
+    this.balance -= amount;
     return amount;
   }
 
