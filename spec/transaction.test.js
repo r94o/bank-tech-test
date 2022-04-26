@@ -2,7 +2,7 @@ const Transaction = require("../lib/transaction")
 
 describe(Transaction, () => {
 
-  beforeEach(() => {
+  beforeAll(() => {
     jest.useFakeTimers()
         .setSystemTime(new Date('2022-03-01'));
     this.transaction = new Transaction(1, 123);
