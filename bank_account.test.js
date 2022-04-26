@@ -10,4 +10,13 @@ describe("Bank Account", () => {
       }).not.toThrow();
     })
   })
+
+  describe("#withdraw", () => {
+    it("can withdraw money from the account", () => {
+      const bankAccount = new BankAccount();
+      bankAccount.deposit(50);
+      expect(bankAccount.withdraw(50)).toBe(50)
+    })
+  })
+
 })

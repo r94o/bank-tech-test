@@ -1,7 +1,11 @@
 class BankAccount {
 
   deposit() {
-    
+
+  }
+
+  withdraw(amount) {
+    return amount;
   }
 
 }
