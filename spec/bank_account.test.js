@@ -1,4 +1,4 @@
-const BankAccount = require("./bank_account")
+const BankAccount = require("../lib/bank_account")
 
 describe("Bank Account", () => {
 
