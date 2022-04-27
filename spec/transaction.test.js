@@ -1,30 +1,30 @@
-const Transaction = require("../lib/transaction")
+const Transaction = require('../lib/transaction');
 
 describe(Transaction, () => {
+  beforeEach(() => {
+    this.transaction = new Transaction(123);
+  });
 
-  befoeEach(() => {
-    this.transaction = new Transaction(1, 123);
-  })
-
-  describe("#getDate", () => {
-    it("returns the transaction date as a string", () => {
+  describe('#date', () => {
+    it('returns the transaction date', () => {
+      const mockDate = new Date('2022-03-01');
       jest.useFakeTimers()
-          .setSystemTime(new Date('2022-03-01'));
-      const transaction = new Transaction(1, 123);
-      expect(transaction.getDate()).toBe("01/03/2022")
+        .setSystemTime(new Date('2022-03-01'));
+      const transaction = new Transaction(123);
+      expect(transaction.date).toEqual(mockDate);
       jest.useRealTimers();
-    })
-  })
-  
-  describe("#getAmount", () => {
-    it("returns the transaction amount as a string", () => {
-      expect(this.transaction.getAmount()).toBe("123.00")
-    })
-  })
+    });
+  });
 
-  describe("#getType", () => {
-    it("returns the transaction type as a number", () => {
-      expect(this.transaction.getType()).toBe(1)
-    })
-  })
-})
+  describe('#amount', () => {
+    it('returns the transaction amount', () => {
+      expect(this.transaction.amount).toBe(123);
+    });
+  });
+
+  describe('#isDebit', () => {
+    it('returns false when credit', () => {
+      expect(this.transaction.isDebit).toBe(false);
+    });
+  });
+});
