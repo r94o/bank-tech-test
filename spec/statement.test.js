@@ -20,7 +20,7 @@ describe(Statement, () => {
       this.statement.print();
 
       expect(consoleLogSpy).toHaveBeenCalledWith(
-        'date||credit||debit||balance\n14/01/2023||500.00||||2500.00',
+        'date||credit||debit||balance\n14/01/2023||500.00||   ||2500.00',
       );
     });
     it('Writes a single credit to the statement', () => {
@@ -30,7 +30,7 @@ describe(Statement, () => {
       this.statement.print();
 
       expect(consoleLogSpy).toHaveBeenCalledWith(
-        'date||credit||debit||balance\n10/01/2023||||40.00||2500.00',
+        'date||credit||debit||balance\n10/01/2023||   ||40.00||2500.00',
       );
     });
     it('Writes a debit and a credit to the statement', () => {
@@ -41,7 +41,7 @@ describe(Statement, () => {
       this.statement.print();
 
       expect(consoleLogSpy).toHaveBeenCalledWith(
-        'date||credit||debit||balance\n14/01/2023||500.00||||2500.00\n10/01/2023||||40.00||2000.00',
+        'date||credit||debit||balance\n14/01/2023||500.00||   ||2500.00\n10/01/2023||   ||40.00||2000.00',
       );
     });
   });

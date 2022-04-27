@@ -37,7 +37,7 @@ describe(BankAccount, () => {
   });
 
   describe('#generateStatement', () => {
-    it('', () => {
+    it('calls the statement instance methods', () => {
       this.bankAccount.deposit(50);
       this.bankAccount.deposit(60);
       this.bankAccount.withdraw(110);
