@@ -1,4 +1,4 @@
-
+[![codecov](https://codecov.io/gh/r94o/bank-tech-test/branch/main/graph/badge.svg?token=2JQO3053GK)](https://codecov.io/gh/r94o/bank-tech-test)
 
 ## **Bank Tech Test**
 
