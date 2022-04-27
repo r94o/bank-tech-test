@@ -1,4 +1,4 @@
-name: Tests
+name: coverage
 
 on: [push]
 
@@ -15,7 +15,6 @@ jobs:
         
     - run: npm install
     - run: npm audit fix
-    - run: jest
     
     - name: Codecov
       uses: codecov/codecov-action@v3.1.0
